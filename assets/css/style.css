@@ -7,3 +7,22 @@ body {
     margin: 0;
     background: -webkit-linear-gradient(rgba(112, 146, 190, 0.4), rgba(112, 146, 190, 0.4)), url("../images/lion.webp") no-repeat center center/cover;
 }
+
+p {
+    font-size: 18px;
+}
+
+.big {
+    line-height: 1.2;
+}
+
+.quiz-container {
+    text-align: center;
+    background: linear-gradient(#7092BE, #7092BE) padding-box,
+        linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
+    border: 3px solid transparent;
+    padding: 32px 24px;
+    border-radius: 16px;
+    background-size: 200% 100%;
+    animation: gradient 5s ease infinite;
+}
