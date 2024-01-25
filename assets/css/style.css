@@ -66,3 +66,28 @@ button {
 .button:hover {
     background-color: blue;
 }
+
+#question-container {
+    max-width: 600px;
+    margin: auto;
+}
+
+.options button {
+    margin: 5px;
+}
+
+#message-container {
+    margin-top: 10px;
+}
+
+#restart-btn {
+    margin-top: 10px;
+}
+
+#quiz-comp {
+    color: Salmon;
+    font-weight: bold;
+}
+
+list-style-type: none;
+}
