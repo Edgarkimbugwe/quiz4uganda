@@ -181,3 +181,35 @@ function displayMessage(message, isCorrect) {
         messageContainer.style.fontWeight = '';
     }
 }
+
+/**
+ * Shows the final results and score when the quiz is completed.
+ * 
+ * Retrieves the player's name, final score, and the number of correct and failed questions.
+ * Updates the HTML elements by displaying the social media links for connections. 
+ * The questions are hidden and the results container is displayed. 
+ */
+function showResults() {
+    // Display final results and score at the end of the quiz
+    const finalScoreElement = document.getElementById('final-score');
+    finalScoreElement.textContent = `${playerName}, your final score is ${score}.`;
+
+    const correctAnswers = questions.filter((q, index) => q.correctAnswer === userAnswers[index]).length;
+    const incorrectAnswers = questions.length - correctAnswers;
+
+    const resultInfoElement = document.getElementById('result-info');
+    resultInfoElement.textContent = `Questions answered correctly: ${correctAnswers},\nFailed Questions: ${incorrectAnswers}`;
+
+    document.getElementById('question-container').style.display = 'none';
+    document.getElementById('results-container').style.display = 'block';
+
+    // Add social media links
+    const socialMediaContainer = document.getElementById('social-media-container');
+    socialMediaContainer.innerHTML = `
+        <p>Connect with us on social media:</p>
+        <a href="https://youtube.com" target="_blank">YouTube</a>
+        <a href="https://facebook.com" target="_blank">Facebook</a>
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+    `;
+}
+
