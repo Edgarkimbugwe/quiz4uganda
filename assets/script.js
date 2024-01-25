@@ -81,3 +81,75 @@ function loadQuestion() {
     // Start the timer for 10 seconds
     startTimer(10);
 }
+
+/**
+ * Timer is started for the specified number of seconds and displays it.
+ * Moves to the next question if the time runs out. 
+ * 
+ * @param {number} seconds - The duration of the timer in seconds. 
+ */
+function startTimer(seconds) {
+    // Display the timer and decrement it every second
+    const timerElement = document.createElement('p');
+    timerElement.id = 'timer';
+    document.getElementById('question-container').appendChild(timerElement);
+
+    let timerValue = seconds;
+
+    questionTimer = setInterval(() => {
+        timerElement.textContent = `Time remaining: ${timerValue} seconds`;
+
+        if (timerValue === 0) {
+            // Time's up, automatically move to the next question
+            clearInterval(questionTimer);
+            checkAnswer(''); // Passing an empty string as the answer to trigger the timeout message
+        }
+
+        timerValue--;
+    }, 1000);
+}
+
+/**
+ * Checks the player's answer, updates the score and moves to the next question
+ * 
+ * @param {string} userAnswer - The player's selected answer
+ */
+function checkAnswer(userAnswer) {
+    // Clear the timer when the user answers the question
+    clearInterval(questionTimer);
+
+    // Disable all buttons after an answer is selected
+    const currentQues = questions[currentQuestion];
+    currentQues.options.forEach(option => {
+        const button = document.getElementById(option);
+        button.disabled = true;
+    });
+
+    // Check if the user's answer is correct and update the score
+    const correctAnswer = currentQues.correctAnswer;
+
+    userAnswers[currentQuestion] = userAnswer;
+
+    if (userAnswer === correctAnswer) {
+        score++;
+        displayMessage('Correct!', true);
+    } else {
+        displayMessage(`Incorrect. The correct answer is ${correctAnswer}.`, false);
+    }
+
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+        // Wait for a brief moment before moving to the next question
+        setTimeout(() => {
+            loadQuestion();
+            displayMessage('');
+        }, 2000); // 2000 milliseconds (2 seconds) delay to the next question
+    } else {
+        // Display final results for the last question
+        setTimeout(() => {
+            displayMessage("");
+            showResults();
+        }, 2000); // 2000 milliseconds (2 seconds) delay to the next question
+    }
+}
