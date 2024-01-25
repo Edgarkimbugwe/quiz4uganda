@@ -28,3 +28,56 @@ function shuffleArray(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
 }
+
+/**
+ * Initiates the quiz by retrieving the player's name and starting the quiz.
+ * Hides the welcome container and displays the first question.
+ */
+function startQuiz() {
+    // Retrieve player name
+    const playerNameInput = document.getElementById('player-name');
+    playerName = playerNameInput.value.trim();
+    console.log('Start Quiz function called');
+    console.log('Player name input:', playerNameInput);
+
+    // Check if the player name is empty
+    if (playerName === '') {
+        displayMessage('Please enter your name.');
+        return;  // Exit the function if the name is empty
+    }
+
+    // If the name is not empty, proceed with quiz initiation
+    playerNameInput.value = playerName;  // Update the input field with the trimmed name
+
+    // Hide welcome container and show question container
+    document.getElementById('welcome-container').style.display = 'none';
+    document.getElementById('question-container').style.display = 'block';
+
+    // Shuffle questions and load the first question
+    shuffleArray(questions);
+    loadQuestion();;
+}
+
+/**
+ * Loads the next question in the quiz.
+ */
+function loadQuestion() {
+    // Load the current question into the question container
+    const questionContainer = document.getElementById('question-container');
+    const messageContainer = document.getElementById('message-container');
+
+    messageContainer.innerHTML = '';
+
+    const currentQues = questions[currentQuestion];
+
+    questionContainer.innerHTML = `
+        <h2>${currentQues.question}</h2>
+        <div class="options">
+            ${currentQues.options.map(option => `<button id="${option}" onclick="checkAnswer('${option}')">${option}</button>`).join('')}
+        </div>
+        <p>Score: ${score}</p>
+    `;
+
+    // Start the timer for 10 seconds
+    startTimer(10);
+}
