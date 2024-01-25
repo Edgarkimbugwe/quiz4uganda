@@ -40,3 +40,29 @@ p {
         background-position: 0% 50%;
     }
 }
+
+#welcome-container {
+    max-width: 400px;
+    margin: auto;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#player-name {
+    font-size: 15px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+button {
+    margin-top: 10px;
+    font-size: 18px;
+    padding: 5px 14px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.button:hover {
+    background-color: blue;
+}
