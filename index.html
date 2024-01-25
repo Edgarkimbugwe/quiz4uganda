@@ -59,6 +59,17 @@
         <div id="question-container" style="display: none;"></div>
         <!-- Container for displaying messages to the user -->
         <div id="message-container"></div>
+        <button id="restart-btn" style="display: none;" onclick="restartQuiz()">Restart Quiz</button>
+        <div id="results-container" style="display: none;">
+            <h4 id="quiz-comp">Quiz completed!</h4>
+            <p id="final-score"></p>
+            <p id="result-info"></p>
+            <!-- Buttons to restart and end the quiz -->
+            <button onclick="restartQuiz()">Restart Quiz</button>
+            <button onclick="endQuiz()">End Quiz</button>
+            <hr>
+            <div id="social-media-container"></div>
+        </div>
     </div>
 
     
