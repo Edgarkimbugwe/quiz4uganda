@@ -80,14 +80,11 @@ button {
     margin-top: 10px;
 }
 
-#restart-btn {
-    margin-top: 10px;
-}
-
 #quiz-comp {
     color: Salmon;
     font-weight: bold;
 }
 
-list-style-type: none;
+#restart-btn {
+    margin-top: 10px;
 }
