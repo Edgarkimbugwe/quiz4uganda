@@ -226,3 +226,15 @@ function restartQuiz() {
     shuffleArray(questions);
     loadQuestion();
 }
+
+/**
+ * quiz is ended, returning to the welcome screen and clearing the player's name
+ */
+function endQuiz() {
+    // End the quiz and return to the welcome screen if the player wishes not to restart the quiz
+    document.getElementById('results-container').style.display = 'none';
+    document.getElementById('welcome-container').style.display = 'block';
+    document.getElementById('player-name').value = ''; // Clear player name
+    currentQuestion = 0;
+    score = 0;
+}
