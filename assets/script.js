@@ -213,3 +213,16 @@ function showResults() {
     `;
 }
 
+/**
+ * Restarts the quiz by resetting the quiz and loading the first question (in a shuffled format)
+ */
+function restartQuiz() {
+    // Restart the quiz if the players wishes too
+    currentQuestion = 0;
+    score = 0;
+    userAnswers = [];
+    document.getElementById('results-container').style.display = 'none';
+    document.getElementById('question-container').style.display = 'block';
+    shuffleArray(questions);
+    loadQuestion();
+}
