@@ -153,3 +153,31 @@ function checkAnswer(userAnswer) {
         }, 2000); // 2000 milliseconds (2 seconds) delay to the next question
     }
 }
+
+/**
+ * Messages displayed to the player depeding on answer selected or other conditions.
+ *  
+ * @param {string} message - The message to display
+ * @param {boolean} isCorrect - Shows if the user's answer is correct
+ */
+function displayMessage(message, isCorrect) {
+    // Display messages to the user
+    const messageContainer = document.getElementById('message-container');
+    messageContainer.textContent = message;
+
+    // Add style to display the message based on correctness
+    if (message.includes('Please enter your name before starting the quiz.')) {
+        messageContainer.style.color = 'white'; // Color for the specific message
+        messageContainer.style.fontWeight = 'bold';
+    } else if (isCorrect === true) {
+        messageContainer.style.color = 'green'; // Correct answer message color
+        messageContainer.style.fontWeight = 'bold';
+    } else if (isCorrect === false) {
+        messageContainer.style.color = 'Salmon'; // Incorrect answer message color
+        messageContainer.style.fontWeight = 'bold';
+    } else {
+        // Reset the color and font weight for other messages
+        messageContainer.style.color = '';
+        messageContainer.style.fontWeight = '';
+    }
+}
