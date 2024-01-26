@@ -255,6 +255,9 @@ The Live link can be access by clicking on the blue link here [Quiz4Uganda](http
 
 ## Acknowledge-Code
 
-The majority of the JavaScript code was derived from a YouTube video and then customized. You can find the original code in the following link: [Coding Artist](https://www.youtube.com/watch?v=p-2G-7vLuV4&t=2286s)
+Most of the JavaScript code was adapted from YouTube tutorials and subsequently personalized. Here are the links;
 
-Also, I would like to express my gratitude to my mentor, Spencer Barriball, for dedicating her time and efforts to support and guide me.
+- [GreatStack](https://www.youtube.com/watch?v=PBcqGxrr9g8)
+- [Coding Artist](https://www.youtube.com/watch?v=p-2G-7vLuV4&t=2286s)
+
+I would also like to extend my appreciation to my mentor, [Spencer Barriball](https://github.com/5pence), for generously investing his time and expertise to assist and guide me. 
