@@ -213,7 +213,7 @@ After fixing the error, the website was checked again and no errors were detecte
 
 ### JAVASCRIPT
 
-Testing was carried out by [JSHint](https://jshint.com/) and 39 warnings were detected. They however do not affect the functioning of the quiz game.
+Testing was carried out by [JSHint](https://jshint.com/) and one warning on line 58 was detected and rectified. 
 
 ![Javascript testing](assets/images/readme/js%20testing.png)
 
